@@ -69,13 +69,13 @@ function App() {
         setMessage('');
     };
   return (
-      <div className="flex flex-col h-screen justify-between">
+      <div className="flex flex-col h-screen justify-between bg-slate-900 text-gray-100">
           <div className="overflow-auto p-4 space-y-4">
               {messages.map((item, index) => (
                   <Message key={index} message={item.message} secondBest={item.secondBest} align={index % 2 ? 'left' : 'right'}/>
               ))}
           </div>
-          <form onSubmit={sendMessage} className="p-4 bg-gray-200 flex w-full gap-x-2">
+          <form onSubmit={sendMessage} className="p-4 bg-gray-700 flex w-full gap-x-2">
               <button type="button" onClick={toggleExpander} className="w-32 py-2 px-4 bg-orange-500 text-white rounded">
                   {isOpen && (
                       <div className="flex w-full">
@@ -102,7 +102,7 @@ function App() {
               <input
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-full p-2 border rounded"
+                  className="w-full p-2 border rounded bg-slate-800 border-slate-900"
                   placeholder="Type your message..."
               />
               <button type="submit" className="p-2 bg-blue-500 text-white rounded">
